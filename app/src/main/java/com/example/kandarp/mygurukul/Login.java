@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class Login extends AppCompatActivity implements Response {
     Button b1;
@@ -42,7 +43,7 @@ public class Login extends AppCompatActivity implements Response {
     @Override
     public void response(boolean userExists) {
         if(userExists) {
-            Intent intent = new Intent(Login.this,MainActivity.class);
+            Intent intent = new Intent(Login.this,Home.class);
             startActivity(intent);
         }
         else{
