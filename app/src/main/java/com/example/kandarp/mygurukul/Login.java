@@ -8,21 +8,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 
-public class Login extends AppCompatActivity implements Response {
+public class Login extends AppCompatActivity implements ResponseLogin {
     Button b1;
-    TextInputLayout user_id, pwd;
+    TextInputLayout userIdLayout, pwdLayout;
+    String user_id;
+    String pwd;
+    private SessionManager session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        b1 = (Button) findViewById(R.id.sign_in_button);
-        user_id = (TextInputLayout) findViewById(R.id.user_id);
-        pwd = (TextInputLayout) findViewById(R.id.password);
+        session = new SessionManager(getApplicationContext());
 
+        b1 = (Button) findViewById(R.id.sign_in_button);
+        userIdLayout = (TextInputLayout) findViewById(R.id.user_id);
+        pwdLayout = (TextInputLayout) findViewById(R.id.password);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,16 +36,17 @@ public class Login extends AppCompatActivity implements Response {
     }
 
     void attemptLogin() {
-        String user_id = Login.this.user_id.getEditText().getText().toString();
-        String pwd = Login.this.pwd.getEditText().getText().toString();
-        DBConnect dbConnect = new DBConnect(this);
-        dbConnect.delegate = Login.this;
-        dbConnect.execute(user_id, pwd);
+        user_id = userIdLayout.getEditText().getText().toString();
+        pwd = pwdLayout.getEditText().getText().toString();
+        DBConnectLogin dbConnectLogin = new DBConnectLogin(this);
+        dbConnectLogin.delegate = Login.this;
+        dbConnectLogin.execute(user_id, pwd);
     }
 
     @Override
     public void response(boolean userExists) {
         if(userExists) {
+            session.createLoginSession(user_id);
             Intent intent = new Intent(Login.this,Home.class);
             startActivity(intent);
         }
