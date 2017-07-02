@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dip"
+        android:text="First Name"
+        android:textColor="#000000"
+        android:textSize="15dip"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/border"
+        android:padding="10dip"
+        android:text="Kandarp  Sharma welcome to nitte"
+        android:textColor="#000000"
+        android:textSize="15dip"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+
+</TableRow>
+
