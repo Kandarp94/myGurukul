@@ -39,8 +39,11 @@ public class Home extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     }
-                    case 1:
+                    case 1:{
+                        Intent intent = new Intent(Home.this, MyProfile.class);
+                        startActivity(intent);
                         break;
+                    }
                     case 2: {
                         Intent intent = new Intent(Home.this, Holidays.class);
                         startActivity(intent);
