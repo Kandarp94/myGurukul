@@ -52,6 +52,7 @@ public class MyProfile extends AppCompatActivity implements Response{
                         key = (String) keys.next();
                         tr = (TableRow) View.inflate(this, R.layout.profile_table_row, null);
                         tr.setId(View.generateViewId());
+
                         TextView tv1 = (TextView) tr.getChildAt(0);
                         tv1.setText(tags[j++]);
 

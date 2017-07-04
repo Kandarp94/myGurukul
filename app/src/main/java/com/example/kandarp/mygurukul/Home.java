@@ -40,7 +40,7 @@ public class Home extends AppCompatActivity {
                         break;
                     }
                     case 1:{
-                        Intent intent = new Intent(Home.this, MyProfile.class);
+                        Intent intent = new Intent(Home.this, PerformanceDetails.class);
                         startActivity(intent);
                         break;
                     }

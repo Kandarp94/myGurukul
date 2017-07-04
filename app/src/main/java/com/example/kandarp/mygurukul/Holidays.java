@@ -2,6 +2,7 @@ package com.example.kandarp.mygurukul;
 
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -95,15 +96,15 @@ public class Holidays extends AppCompatActivity implements Response{
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-            String dayOfWeek = new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date);
-            String newDate = new SimpleDateFormat("dd MMMM yyyy").format(date);
+            String dayOfWeek = new SimpleDateFormat("EEE", Locale.ENGLISH).format(date);
+            String newDate = new SimpleDateFormat("dd-MMM-yy").format(date);
 
             Log.i("date", dayOfWeek);
             name = dayOfWeek + "," + newDate;
         }
         label.setText(name.equals("null") ? "-" : name);
         label.setId(View.generateViewId());
-        label.setLayoutParams(new TableLayout.LayoutParams(TableLayout.LayoutParams.WRAP_CONTENT, TableLayout.LayoutParams.WRAP_CONTENT));
+        label.setLayoutParams(new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT,TableLayout.LayoutParams.WRAP_CONTENT));
         label.setPadding(pixelAsDp(10), pixelAsDp(10), pixelAsDp(10), pixelAsDp(10));
         label.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15);
         label.setTypeface(Typeface.MONOSPACE, Typeface.BOLD);
