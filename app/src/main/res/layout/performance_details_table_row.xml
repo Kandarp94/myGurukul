@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:background="@drawable/border"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:padding="10dip"
+        android:text="Subjects"
+        android:textColor="#000000"
+        android:textSize="15dip"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+
+    <TextView
+        android:background="@drawable/border"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:padding="10dip"
+        android:text="class held"
+        android:textColor="#000000"
+        android:textSize="15dip"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+
+    <TextView
+        android:background="@drawable/border"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:padding="10dip"
+        android:text="class Attended"
+        android:textColor="#000000"
+        android:textSize="15dip"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+
+    <TextView
+        android:background="@drawable/border"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:padding="10dip"
+        android:text="class Absent"
+        android:textColor="#000000"
+        android:textSize="15dip"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+
+    <TextView
+        android:background="@drawable/border"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:padding="10dip"
+        android:text="Mse1"
+        android:textColor="#000000"
+        android:textSize="15dip"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+
+    <TextView
+        android:background="@drawable/border"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:padding="10dip"
+        android:text="mse2"
+        android:textColor="#000000"
+        android:textSize="15dip"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+
+    <TextView
+        android:background="@drawable/border"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:padding="10dip"
+        android:text="mse3"
+        android:textColor="#000000"
+        android:textSize="15dip"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+
+    <TextView
+        android:background="@drawable/border"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:padding="10dip"
+        android:text="la1"
+        android:textColor="#000000"
+        android:textSize="15dip"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+
+
+    <TextView
+        android:background="@drawable/border"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:padding="10dip"
+        android:text="la2"
+        android:textColor="#000000"
+        android:textSize="15dip"
+        android:textStyle="bold"
+        android:typeface="monospace" />
+</TableRow>
+
