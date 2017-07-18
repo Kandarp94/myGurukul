@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <TableLayout
+                android:id="@+id/table"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="*"
+                >
+                <include
+                    layout="@layout/toolbar_time_table"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dip"
+                        android:text="Period/Day"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/border"
+                        android:typeface="monospace" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dip"
+                        android:text="09:00a.m-09:55a.m"
+                        android:textColor="#000000"
+                        android:textSize="15dip"
+                        android:textStyle="bold"
+                        android:background="@drawable/border"
+                        android:typeface="monospace" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dip"
+                        android:text="10:05a.m-11:00a.m"
+                        android:textColor="#000000"
+                        android:textSize="15dip"
+                        android:textStyle="bold"
+                        android:background="@drawable/border"
+                        android:typeface="monospace" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dip"
+                        android:text="11:00a.m-11:55a.m"
+                        android:textColor="#000000"
+                        android:textSize="15dip"
+                        android:textStyle="bold"
+                        android:background="@drawable/border"
+                        android:typeface="monospace" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dip"
+                        android:text="Lunch"
+                        android:textColor="#000000"
+                        android:textSize="15dip"
+                        android:textStyle="bold"
+                        android:background="@drawable/border"
+                        android:typeface="monospace" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dip"
+                        android:text="12:35p.m-1:30p.m"
+                        android:textColor="#000000"
+                        android:textSize="15dip"
+                        android:textStyle="bold"
+                        android:background="@drawable/border"
+                        android:typeface="monospace" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dip"
+                        android:text="01:30p.m-02:25p.m"
+                        android:textColor="#000000"
+                        android:textSize="15dip"
+                        android:textStyle="bold"
+                        android:background="@drawable/border"
+                        android:typeface="monospace" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dip"
+                        android:text="02:25p.m-03:20p.m"
+                        android:textColor="#000000"
+                        android:textSize="15dip"
+                        android:textStyle="bold"
+                        android:background="@drawable/border"
+                        android:typeface="monospace" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dip"
+                        android:text="03:20p.m-04:15p.m"
+                        android:textColor="#000000"
+                        android:textSize="15dip"
+                        android:textStyle="bold"
+                        android:background="@drawable/border"
+                        android:typeface="monospace" />
+
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dip"
+                        android:text="Monday"
+                        android:textColor="#000000"
+                        android:textSize="15dip"
+                        android:textStyle="bold"
+                        android:background="@drawable/border"
+                        android:typeface="monospace" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dip"
+                        android:text="Tuesday"
+                        android:textColor="#000000"
+                        android:textSize="15dip"
+                        android:textStyle="bold"
+                        android:background="@drawable/border"
+                        android:typeface="monospace" />
+
+
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dip"
+                        android:text="Wednesday"
+                        android:textColor="#000000"
+                        android:textSize="15dip"
+                        android:textStyle="bold"
+                        android:background="@drawable/border"
+                        android:typeface="monospace" />
+
+
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dip"
+                        android:text="Thursday"
+                        android:textColor="#000000"
+                        android:textSize="15dip"
+                        android:textStyle="bold"
+                        android:background="@drawable/border"
+                        android:typeface="monospace" />
+
+
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dip"
+                        android:text="Friday"
+                        android:textColor="#000000"
+                        android:textSize="15dip"
+                        android:textStyle="bold"
+                        android:background="@drawable/border"
+                        android:typeface="monospace" />
+
+
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dip"
+                        android:text="Saturday"
+                        android:textColor="#000000"
+                        android:textSize="15dip"
+                        android:textStyle="bold"
+                        android:background="@drawable/border"
+                        android:typeface="monospace" />
+
+
+                </TableRow>
+            </TableLayout>
+
+        </HorizontalScrollView>
+    </ScrollView>
+</RelativeLayout>

@@ -42,9 +42,9 @@ public class ImageAdapter extends BaseAdapter {
             } else if (items.equals("Performance Details")) {
                 imageView.setImageResource(R.drawable.perfodetails);
             } else if (items.equals("Institutional Holidays")) {
-                imageView.setImageResource(R.drawable.timetable);
-            } else {
                 imageView.setImageResource(R.drawable.instituionalholidays);
+            } else {
+                imageView.setImageResource(R.drawable.timetable);
             }
         } else {
             gridView = (View) convertView;

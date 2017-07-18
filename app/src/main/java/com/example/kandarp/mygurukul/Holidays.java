@@ -29,6 +29,7 @@ public class Holidays extends AppCompatActivity implements Response{
 
     TableLayout tableHoliday;
     TableRow tr;
+
     int textBackground1, textBackground2;
     int colors[];
 
@@ -110,7 +111,8 @@ public class Holidays extends AppCompatActivity implements Response{
         label.setTypeface(Typeface.MONOSPACE, Typeface.BOLD);
         label.setBackgroundColor(backgroundColor);
         label.setGravity(Gravity.CENTER);
-        label.setTextColor(Color.WHITE);
+        label.setTextColor(Color.BLACK);
+        label.setBackgroundResource(R.drawable.border_holiday);
         LinearLayout Ll = new LinearLayout(Holidays.this);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT,
                 TableLayout.LayoutParams.WRAP_CONTENT);

@@ -6,10 +6,15 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
-public class Login extends AppCompatActivity implements ResponseLogin {
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class Login extends AppCompatActivity implements Response {
     Button b1;
     TextInputLayout userIdLayout, pwdLayout;
     String user_id;
@@ -44,24 +49,41 @@ public class Login extends AppCompatActivity implements ResponseLogin {
     }
 
     @Override
-    public void response(boolean userExists) {
-        if(userExists) {
-            session.createLoginSession(user_id);
-            Intent intent = new Intent(Login.this,Home.class);
-            startActivity(intent);
-        }
-        else{
-            AlertDialog.Builder alertDialog = new AlertDialog.Builder(Login.this);
-            alertDialog.setTitle("Login failed...")
-                    .setMessage("Username/Password is incorrect")
-                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
+    public void response(boolean reply, String response) {
+        if (reply) {
+            JSONObject jsonObject = null;
+            try {
+                jsonObject = new JSONObject(response);
+                boolean userExists = jsonObject.getBoolean("userExists");
+                if (userExists) {
+                    session.createLoginSession(jsonObject.getString("usn"),jsonObject.getString("name"));
+                    Intent intent = new Intent(Login.this, Home.class);
+                    startActivity(intent);
+                } else {
+                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(Login.this);
+                    alertDialog.setTitle("Login failed...")
+                            .setMessage("Username/Password is incorrect")
+                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
 
-                        }
-                    });
-            AlertDialog alert = alertDialog.create();
-            alert.show();
-        }
+                                }
+                            });
+                    AlertDialog alert = alertDialog.create();
+                    alert.show();
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+
+        } else
+            Toast.makeText(this, response, Toast.LENGTH_SHORT).show();
+
     }
+
+    /*@Override
+    public void response(boolean userExists) {
+
+    }*/
 }

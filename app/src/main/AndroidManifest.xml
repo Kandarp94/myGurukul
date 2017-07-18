@@ -16,6 +16,7 @@
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -26,6 +27,7 @@
         <activity android:name=".MyProfile" />
         <activity android:name=".Holidays" />
         <activity android:name=".PerformanceDetails" />
+        <activity android:name=".TimeTable"></activity>
     </application>
 
 </manifest>

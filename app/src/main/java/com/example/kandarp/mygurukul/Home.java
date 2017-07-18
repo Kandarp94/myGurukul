@@ -10,11 +10,14 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
@@ -23,25 +26,23 @@ public class Home extends AppCompatActivity {
     GridView gridView;
     private SessionManager session;
     static final String[] TITLE = new String[]{"My Profile", "Performance Details", "Institutional Holidays", "Time Table"};
-    private DrawerLayout mdrawerlayout;
+
     private ActionBarDrawerToggle mtoggle;
     private Toolbar mtoolbar;
+    private TextView usnText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        usnText = (TextView) findViewById(R.id.usnText);
+
         session = new SessionManager(Home.this);
 
         mtoolbar = (Toolbar) findViewById(R.id.nav_action);
         setSupportActionBar(mtoolbar);
 
-        mdrawerlayout = (DrawerLayout) findViewById(R.id.drawerlayout);
-        mtoggle = new ActionBarDrawerToggle(this, mdrawerlayout, R.string.open, R.string.close);
-
-        mdrawerlayout.addDrawerListener(mtoggle);
-        mtoggle.syncState();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -50,8 +51,19 @@ public class Home extends AppCompatActivity {
         myView.setFlipInterval(2000);
         myView.startFlipping();
 
+        String name = session.getUserDetails().get(session.KEY_FIRST_NAME);
+        String usn = session.getUserDetails().get(session.KEY_USN);
+        usnText.setText(name + "(" + usn + ")");
 
         gridView = (GridView) findViewById(R.id.gridview);
+
+        gridView.setOnTouchListener(new View.OnTouchListener(){
+            public boolean onTouch(View v, MotionEvent event) {
+                return (event.getAction() == MotionEvent.ACTION_MOVE);
+            }
+        });
+
+
         gridView.setAdapter(new ImageAdapter(Home.this, TITLE));
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -72,6 +84,8 @@ public class Home extends AppCompatActivity {
                         break;
                     }
                     case 3:
+                        Intent intent = new Intent(Home.this, TimeTable.class);
+                        startActivity(intent);
                         break;
                 }
             }

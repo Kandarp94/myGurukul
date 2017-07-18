@@ -1,11 +1,14 @@
 package com.example.kandarp.mygurukul;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -75,7 +78,7 @@ public class DBConnect extends AsyncTask<String, Void, String> {
             //  resp = "Server not reachable !!";
             resp = e.getMessage();
         }
-        Log.i("user", resp);
+        //Log.i("user", resp);
         return resp;
     }
 
@@ -91,9 +94,13 @@ public class DBConnect extends AsyncTask<String, Void, String> {
 
     public boolean isJSONValid(String test) {
         try {
-            new JSONArray(test);
+            new JSONObject(test);
         } catch (JSONException ex) {
-            return false;
+            try {
+                new JSONArray(test);
+            } catch (JSONException e) {
+                return false;
+            }
         }
         return true;
     }

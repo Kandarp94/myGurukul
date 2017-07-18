@@ -7,6 +7,7 @@
     <color name="loginBackground">#9AB526</color>
     <color name="black">#000000</color>
 
-    <color name="textBackground1">#9AB546</color>
-    <color name="textBackground2">#FF89E223</color>
+    <color name="textBackground1">
+        #ffffff</color>
+    <color name="textBackground2">#ffffff</color>
 </resources>

@@ -20,7 +20,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scrollbars="none"
+                android:background="@drawable/border_holiday"
                 android:stretchColumns="*">
+
+                <include
+                    layout="@layout/toolbar_holidays"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
 
             </TableLayout>
         </LinearLayout>

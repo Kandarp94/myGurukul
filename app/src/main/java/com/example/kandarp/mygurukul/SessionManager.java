@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.util.Log;
 
 import java.util.HashMap;
 
@@ -15,6 +16,7 @@ public class SessionManager {
     private static final String PREF_NAME = "credentials";
     private static final String IS_LOGIN = "isLoggedIn";
     public static final String KEY_USN = "usn";
+    public static final String KEY_FIRST_NAME = "name";
 
 
     public SessionManager(Context context) {
@@ -23,10 +25,11 @@ public class SessionManager {
         editor = pref.edit();
     }
 
-    public void createLoginSession(String usn) {
+    public void createLoginSession(String usn,String firstName) {
         //Log.e("createlogin", "here" + name + mobile);
         editor.putBoolean(IS_LOGIN, true);
         editor.putString(KEY_USN, usn);
+        editor.putString(KEY_FIRST_NAME, firstName);
         editor.commit();
     }
 
@@ -44,6 +47,7 @@ public class SessionManager {
     public HashMap<String, String> getUserDetails() {
         HashMap<String, String> user = new HashMap<String, String>();
         user.put(KEY_USN, pref.getString(KEY_USN, null));
+        user.put(KEY_FIRST_NAME, pref.getString(KEY_FIRST_NAME, null));
         return user;
     }
 

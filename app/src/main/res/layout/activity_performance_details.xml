@@ -17,6 +17,13 @@
             android:stretchColumns="*"
             android:background="@drawable/border"
             android:id="@+id/table">
+
+            <include
+                layout="@layout/toolbar_perfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
         </TableLayout>
     </HorizontalScrollView>
 </RelativeLayout>

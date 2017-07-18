@@ -5,6 +5,10 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -25,7 +29,7 @@ import java.net.URLEncoder;
 public class DBConnectLogin extends AsyncTask<String, Void, String> {
 
     Context ctx;
-    ResponseLogin delegate;
+    Response delegate;
 
     DBConnectLogin(Context ctx) {
         this.ctx = ctx;
@@ -40,8 +44,8 @@ public class DBConnectLogin extends AsyncTask<String, Void, String> {
 
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setDoOutput(true);
-            urlConnection.setConnectTimeout(20000);
-            urlConnection.setReadTimeout(20000);
+            urlConnection.setConnectTimeout(30000);
+            urlConnection.setReadTimeout(30000);
 
             String data = URLEncoder.encode("user_id", "UTF-8") + "=" + URLEncoder.encode(params[0], "UTF-8") + "&" +
                     URLEncoder.encode("pwd", "UTF-8") + "=" + URLEncoder.encode(params[1], "UTF-8");
@@ -76,13 +80,23 @@ public class DBConnectLogin extends AsyncTask<String, Void, String> {
 
     @Override
     protected void onPostExecute(String response) {
-        if (response.equals("true"))
-            delegate.response(true);
-        else if (response.equals("false"))
-            delegate.response(false);
-        else {
-            Toast.makeText(ctx, response, Toast.LENGTH_LONG).show();
-        }
         Log.e("user", response);
+        if (!isJSONValid(response))
+            delegate.response(false, response);
+        else
+            delegate.response(true, response);
+    }
+
+    public boolean isJSONValid(String test) {
+        try {
+            new JSONObject(test);
+        } catch (JSONException ex) {
+            try {
+                new JSONArray(test);
+            } catch (JSONException e) {
+                return false;
+            }
+        }
+        return true;
     }
 }
